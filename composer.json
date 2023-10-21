@@ -1,0 +1,21 @@
+{
+    "name": "bogdanerik/paymentgateway",
+    "description": "A PHP library that offers a unified integration point for connecting with multiple payment service providers, streamlining the process of payment processing for your e-commerce applications.",
+    "type": "libary",
+    "autoload": {
+        "psr-4": {
+            "Bogdanerik\\Paymentgateway\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erik Bogdan"
+        }
+    ],
+    "require": {
+        "developermypos/mypos-checkout-sdk": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    }
+}
