@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "developermypos/mypos-checkout-sdk": "^1.3"
+        "developermypos/mypos-checkout-sdk": "^1.3",
+        "barion/barion-web-php": "^1.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^10"
