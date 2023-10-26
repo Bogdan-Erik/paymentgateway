@@ -4,7 +4,8 @@ namespace Bogdanerik\Paymentgateway\Core\Interfaces;
 
 use Bogdanerik\Paymentgateway\Core\Objects\BillingData;
 
-interface Payment extends PaymentPurchase {
+interface Payment extends PaymentPurchase
+{
     public function getConfig():object;
     public function setConfig(array $data):self;
     

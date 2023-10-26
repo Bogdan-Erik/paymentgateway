@@ -5,7 +5,8 @@ namespace Bogdanerik\Paymentgateway\Core;
 use Bogdanerik\Paymentgateway\Core\Interfaces\Payment;
 use Bogdanerik\Paymentgateway\Core\Interfaces\PaymentGateway;
 
-class MyPosGateway implements PaymentGateway {
+class MyPosGateway implements PaymentGateway
+{
     public function processPayment(Payment $data): string
     {
         $config = $data->getConfig();

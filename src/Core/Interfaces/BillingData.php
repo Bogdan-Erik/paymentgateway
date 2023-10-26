@@ -2,7 +2,8 @@
 
 namespace Bogdanerik\Paymentgateway\Core\Interfaces;
 
-interface BillingData {
+interface BillingData
+{
     public function getFirstName():string;
     public function setFirstName(string $value):self;
 

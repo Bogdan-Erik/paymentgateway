@@ -4,7 +4,8 @@ namespace Bogdanerik\Paymentgateway\Core\Interfaces;
 
 use Bogdanerik\Paymentgateway\Core\Objects\BillingData;
 
-interface PaymentPurchase {
+interface PaymentPurchase
+{
     public function getOkUrl(): string;
     public function setOkUrl(string $data):self;
     public function getCancelUrl(): string;
