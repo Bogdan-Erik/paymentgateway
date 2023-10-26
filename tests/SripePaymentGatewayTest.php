@@ -7,6 +7,12 @@ use Bogdanerik\Paymentgateway\Core\Objects\CartItem;
 
 final class SripePaymentGatewayTest extends TestCase
 {
+    /**
+     * This method tests the StripePayment class by creating a new instance of it and setting up billing and cart data.
+     * It then asserts that the instance of StripePayment is of the correct class.
+     *
+     * @return void
+     */
     public function testStripePayment(): void
     {
         $stripePayment = new StripePayment();

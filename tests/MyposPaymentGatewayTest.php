@@ -7,6 +7,16 @@ use Bogdanerik\Paymentgateway\Core\Objects\CartItem;
 
 final class MyposPaymentGatewayTest extends TestCase
 {
+    /**
+     * Test case for MyPosPayment class.
+     *
+     * @covers \MyPos\IPC\MyPosPayment
+     * @covers \MyPos\IPC\Config
+     * @covers \MyPos\IPC\CartItem
+     * @covers \MyPos\IPC\BillingData
+     *
+     * @return void
+     */
     public function testMyposPayment(): void
     {
         $myposPayment = new MyPosPayment();
