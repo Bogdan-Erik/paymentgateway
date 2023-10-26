@@ -4,7 +4,8 @@
     "type": "libary",
     "autoload": {
         "psr-4": {
-            "Bogdanerik\\Paymentgateway\\": "src/"
+            "Bogdanerik\\Paymentgateway\\": "src/",
+            "Stripe\\": "vendor/stripe/lib/"
         }
     },
     "authors": [
@@ -13,7 +14,8 @@
         }
     ],
     "require": {
-        "developermypos/mypos-checkout-sdk": "^1.3"
+        "developermypos/mypos-checkout-sdk": "^1.3",
+        "stripe/stripe-php": "^13.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10"
