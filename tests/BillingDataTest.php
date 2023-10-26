@@ -5,6 +5,11 @@ use PHPUnit\Framework\TestCase;
 
 final class BillingDataTest extends TestCase
 {
+    /**
+     * Test case for the BillingData object properties.
+     *
+     * @return void
+     */
     public function testBillingDataObjectProps(): void
     {
         $this->assertObjectHasProperty('firstName', new BillingData);
@@ -16,6 +21,11 @@ final class BillingDataTest extends TestCase
         $this->assertObjectHasProperty('zip', new BillingData);
     }
 
+    /**
+     * Test case for the BillingData object values.
+     *
+     * @return void
+     */
     public function testBillingDataObjectValues(): void
     {
         $billingDatas = new BillingData();
@@ -32,6 +42,5 @@ final class BillingDataTest extends TestCase
         $this->assertSame('John', $billingDatas->getFirstName(),);
         $this->assertSame('Doe', $billingDatas->getLastName());
         $this->assertSame('johndoe@test.com', $billingDatas->getEmail());
-
     }
 }
