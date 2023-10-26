@@ -5,22 +5,17 @@ namespace Bogdanerik\Paymentgateway\Core\MyPos;
 use Bogdanerik\Paymentgateway\Core\Interfaces\CartItem;
 use Bogdanerik\Paymentgateway\Core\Objects\BillingData;
 use Bogdanerik\Paymentgateway\Core\Interfaces\Payment as PaymentInterface;
-use Bogdanerik\Paymentgateway\Core\Interfaces\PaymentPurchase;
+use Bogdanerik\Paymentgateway\Core\PaymentPurchase;
+/**
+ * This class implements the PaymentInterface and PaymentPurchase interfaces and provides methods to set and get payment-related data such as configuration, cart, billing data, URLs, currency, and order ID for MyPos payment gateway.
+ * 
+ * @implements PaymentInterface, PaymentPurchase
+ */
 
-class MyPosPayment implements PaymentInterface, PaymentPurchase {
+final class MyPosPayment extends PaymentPurchase implements PaymentInterface {
     public object|null $config = null;
     public object|null $cart = null;
     public object|null $billingDatas = null;
-
-    public string $okUrl = "";
-    public string $cancelUrl = "";
-    public string $notifyUrl = "";
-    public string $orderId = "";
-    public string $currency = "";
-
-    public function getBillingDatas():object {
-        return $this->billingDatas;
-    }
 
     public function getCart(): object|null {
         return $this->cart;
@@ -40,6 +35,10 @@ class MyPosPayment implements PaymentInterface, PaymentPurchase {
         $this->cart = $cart;
         
         return $this;
+    }
+
+    public function getBillingDatas():object {
+        return $this->billingDatas;
     }
 
     public function setBillingDatas(BillingData $billingData): static {
@@ -77,57 +76,4 @@ class MyPosPayment implements PaymentInterface, PaymentPurchase {
         
         return $this;
     }
-
-    public function getOkUrl(): string {
-        return $this->okUrl;
-    }
-
-    public function setOkUrl(string $data): self {
-        $this->okUrl = $data;
-
-        return $this;
-    }
-
-    public function getCancelUrl(): string {
-        return $this->cancelUrl;
-    }
-
-    public function setCancelUrl(string $data): self {
-        $this->cancelUrl = $data;
-
-        return $this;
-    }
-
-
-    public function getNotifyUrl(): string {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl(string $data): self {
-        $this->notifyUrl = $data;
-
-        return $this;
-    }
-
-    public function getCurrency(): string {
-        return $this->currency;
-    }
-
-    public function setCurrency(string $data): self {
-        $this->currency = $data;
-
-        return $this;
-    }
-    public function getOrderId(): string {
-        return $this->orderId;
-    }
-
-    public function setOrderId(string $data): self {
-        $this->orderId = $data;
-
-        return $this;
-    }
-
-    
-
 }
