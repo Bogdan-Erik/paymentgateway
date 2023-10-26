@@ -12,16 +12,19 @@ use Bogdanerik\Paymentgateway\Core\PaymentPurchase;
  * @implements PaymentInterface, PaymentPurchase
  */
 
-final class MyPosPayment extends PaymentPurchase implements PaymentInterface {
+final class MyPosPayment extends PaymentPurchase implements PaymentInterface
+{
     public object|null $config = null;
     public object|null $cart = null;
     public object|null $billingDatas = null;
 
-    public function getCart(): object|null {
+    public function getCart(): object|null
+    {
         return $this->cart;
     }
 
-    public function setCart(array $datas): static {
+    public function setCart(array $datas): static
+    {
         $cart = new \Mypos\IPC\Cart;
 
         foreach ($datas as $item) {
@@ -37,11 +40,13 @@ final class MyPosPayment extends PaymentPurchase implements PaymentInterface {
         return $this;
     }
 
-    public function getBillingDatas():object {
+    public function getBillingDatas():object
+    {
         return $this->billingDatas;
     }
 
-    public function setBillingDatas(BillingData $billingData): static {
+    public function setBillingDatas(BillingData $billingData): static
+    {
         $customer = new \Mypos\IPC\Customer();
 
         $customer->setFirstName($billingData->getFirstName());
@@ -58,11 +63,13 @@ final class MyPosPayment extends PaymentPurchase implements PaymentInterface {
         return $this;
     }
 
-    public function getConfig(): object {
+    public function getConfig(): object
+    {
         return $this->config;
     }
     
-    public function setConfig(array $data): self {
+    public function setConfig(array $data): self
+    {
         $myposConfig = new \Mypos\IPC\Config();
         
         $myposConfig->setIpcURL($data['ipcUrl']);

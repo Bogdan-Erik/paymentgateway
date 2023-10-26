@@ -2,7 +2,8 @@
 
 namespace Bogdanerik\Paymentgateway\Core\Interfaces;
 
-interface CartItem {
+interface CartItem
+{
     public function getName():string;
     public function setName(string $value):self;
     public function getPrice():float;

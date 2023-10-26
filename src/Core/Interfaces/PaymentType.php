@@ -2,7 +2,7 @@
 
 namespace Bogdanerik\Paymentgateway\Core\Interfaces;
 
-interface PaymentType 
+interface PaymentType
 {
     public function getName(): string;
     public function getOkUrl(): string;
